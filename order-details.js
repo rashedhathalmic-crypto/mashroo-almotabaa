@@ -171,3 +171,5 @@ alert("تم تحديث المرحلة إلى: " + order.stage);
 });
 
 loadOrder();
+document.getElementById("printBtn").href =
+    "print-order.html?id=" + id;
