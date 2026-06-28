@@ -104,15 +104,17 @@ document.getElementById("nextStage").addEventListener("click",async()=>{
         order.status="قيد الإنتاج";
     }
 
-    await updateDoc(doc(db,"orders",id),{
+   await updateDoc(doc(db,"orders",id),{
 
-        stage:order.stage,
+    stage:order.stage,
 
-        progress:order.progress,
+    progress:order.progress,
 
-        status:order.status
+    status:order.status,
 
-    });
+    lastUpdate:new Date().toLocaleString("ar-SA")
+
+});
 
     document.getElementById("status").textContent=order.status;
 
