@@ -10,15 +10,43 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const order = {
+
     orderNo: "2026-" + Date.now(),
+
     customer: document.getElementById("customer").value,
+
+    project: document.getElementById("project").value,
+
+    drawingNo: document.getElementById("drawingNo").value,
+
+    partNo: document.getElementById("partNo").value,
+
     glassType: document.getElementById("glassType").value,
+
+    thickness: Number(document.getElementById("thickness").value),
+
     width: Number(document.getElementById("width").value),
+
     height: Number(document.getElementById("height").value),
+
     qty: Number(document.getElementById("qty").value),
-    date: new Date().toISOString(),
+
+    receivedDate: document.getElementById("receivedDate").value,
+
+    deliveryDate: document.getElementById("deliveryDate").value,
+
+    priority: document.getElementById("priority").value,
+
+    notes: document.getElementById("notes").value,
+
     status: "جديد",
-    stage: "استلام"
+
+    stage: "استلام",
+
+    progress: 0,
+
+    createdAt: new Date().toISOString()
+
 };
 
     try {
