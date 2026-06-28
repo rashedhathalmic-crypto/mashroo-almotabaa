@@ -16,111 +16,128 @@
 
 <div class="container">
 
-<div class="header">
+    <div class="header">
 
-<h1>🏭 متابعة أمر الإنتاج</h1>
+        <h1>🏭 متابعة أمر الإنتاج</h1>
 
-<a href="orders.html" class="btn">
-⬅ العودة لأوامر الإنتاج
-</a>
+        <a href="orders.html" class="btn">
+            ⬅ العودة لأوامر الإنتاج
+        </a>
 
-</div>
+    </div>
 
-<div class="card">
+    <!-- بيانات الطلب -->
 
-<h2 id="orderNo">رقم أمر الإنتاج</h2>
+    <div class="card">
 
-<p><strong>العميل:</strong> <span id="customer"></span></p>
+        <h2 id="orderNo">رقم أمر الإنتاج</h2>
 
-<p><strong>المشروع:</strong> <span id="project"></span></p>
+        <p><strong>العميل:</strong> <span id="customer"></span></p>
 
-<p><strong>رقم الرسمة:</strong> <span id="drawingNo"></span></p>
+        <p><strong>المشروع:</strong> <span id="project"></span></p>
 
-<p><strong>رقم القطعة:</strong> <span id="partNo"></span></p>
+        <p><strong>رقم الرسمة:</strong> <span id="drawingNo"></span></p>
 
-<p><strong>نوع الزجاج:</strong> <span id="glassType"></span></p>
+        <p><strong>رقم القطعة:</strong> <span id="partNo"></span></p>
 
-<p><strong>السمك:</strong> <span id="thickness"></span> مم</p>
+        <p><strong>نوع الزجاج:</strong> <span id="glassType"></span></p>
 
-<p><strong>العرض:</strong> <span id="width"></span> مم</p>
+        <p><strong>السمك:</strong> <span id="thickness"></span> مم</p>
 
-<p><strong>الارتفاع:</strong> <span id="height"></span> مم</p>
+        <p><strong>العرض:</strong> <span id="width"></span> مم</p>
 
-<p><strong>الكمية:</strong> <span id="qty"></span></p>
+        <p><strong>الارتفاع:</strong> <span id="height"></span> مم</p>
 
-<p><strong>الأولوية:</strong> <span id="priority"></span></p>
+        <p><strong>الكمية:</strong> <span id="qty"></span></p>
 
-<p><strong>الحالة:</strong> <span id="status"></span></p>
-<p><strong>آخر تحديث:</strong> <span id="lastUpdate">-</span></p>
-</div>
+        <p><strong>الأولوية:</strong> <span id="priority"></span></p>
 
-<div class="card">
+        <p><strong>الحالة:</strong> <span id="status"></span></p>
 
-<h2>📈 نسبة الإنجاز</h2>
+        <p><strong>آخر تحديث:</strong> <span id="lastUpdate">-</span></p>
 
-<progress
-id="progressBar"
-value="0"
-max="100"
-style="width:100%;height:30px;">
-</progress>
+    </div>
 
-<h2 id="progressText">0%</h2>
+    <!-- نسبة الإنجاز -->
 
-</div>
+    <div class="card">
 
-<div class="card">
+        <h2>📈 نسبة الإنجاز</h2>
 
-<h2>🏭 مراحل الإنتاج</h2>
+        <progress
+            id="progressBar"
+            value="0"
+            max="100"
+            style="width:100%;height:30px;">
+        </progress>
 
-<div id="timeline">
-<h2>📋 سجل المراحل</h2>
+        <h2 id="progressText">0%</h2>
 
-<table id="historyTable">
+    </div>
 
-    <thead>
-        <tr>
-            <th>المرحلة</th>
-            <th>التاريخ والوقت</th>
-        </tr>
-    </thead>
+    <!-- مراحل الإنتاج -->
 
-    <tbody>
+    <div class="card">
 
-    </tbody>
+        <h2>🏭 مراحل الإنتاج</h2>
 
-</table>
+        <div id="timeline">
 
-<br>
-<p id="s1">🟢 استلام</p>
+            <p id="s1">🟢 استلام</p>
 
-<p id="s2">⚪ قص</p>
+            <p id="s2">⚪ قص</p>
 
-<p id="s3">⚪ تجليخ</p>
+            <p id="s3">⚪ تجليخ</p>
 
-<p id="s4">⚪ غسيل</p>
+            <p id="s4">⚪ غسيل</p>
 
-<p id="s5">⚪ Lamination</p>
+            <p id="s5">⚪ Lamination</p>
 
-<p id="s6">⚪ Autoclave</p>
+            <p id="s6">⚪ Autoclave</p>
 
-<p id="s7">⚪ QC</p>
+            <p id="s7">⚪ QC</p>
 
-<p id="s8">⚪ تغليف</p>
+            <p id="s8">⚪ تغليف</p>
 
-<p id="s9">⚪ تسليم</p>
+            <p id="s9">⚪ تسليم</p>
 
-</div>
+        </div>
 
-<br>
+        <br>
 
-<button id="nextStage">
+        <button id="nextStage">
+            ✅ إنهاء المرحلة الحالية
+        </button>
 
-✅ إنهاء المرحلة الحالية
+    </div>
 
-</button>
+    <!-- سجل المراحل -->
 
-</div>
+    <div class="card">
+
+        <h2>📋 سجل المراحل</h2>
+
+        <table id="historyTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>المرحلة</th>
+
+                    <th>التاريخ والوقت</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 
