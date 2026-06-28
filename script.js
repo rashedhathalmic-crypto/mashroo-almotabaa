@@ -22,7 +22,7 @@ form.addEventListener("submit", async (e) => {
 
 try {
    ...
-} catch (error) {
+catch (error) {
     console.error(error);
     alert(error.message);
 }
