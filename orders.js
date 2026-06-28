@@ -19,27 +19,18 @@ async function loadOrders() {
 
         tbody.innerHTML += `
         <tr>
-
             <td>${order.orderNo || "-"}</td>
-
             <td>${order.customer}</td>
-
             <td>${order.glassType}</td>
-
             <td>${order.width}</td>
-
             <td>${order.height}</td>
-
             <td>${order.qty}</td>
-
             <td>${order.status}</td>
-
             <td>
                 <a class="btn" href="order-details.html?id=${doc.id}">
                     👁️ عرض
                 </a>
             </td>
-
         </tr>
         `;
 
