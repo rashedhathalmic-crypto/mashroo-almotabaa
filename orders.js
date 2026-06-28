@@ -49,7 +49,7 @@ async function loadOrders() {
 🏭 متابعة
 </button>
 
-<button class="btn deleteBtn" data-id="${doc.id}">
+<button class="btn deleteBtn" 
 🗑️ حذف
 </button>
 
