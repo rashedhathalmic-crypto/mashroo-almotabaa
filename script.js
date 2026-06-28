@@ -20,15 +20,9 @@ form.addEventListener("submit", async (e) => {
         status: "جديد"
     };
 
-    try {
-        await addDoc(collection(db, "orders"), order);
-
-        alert("✅ تم حفظ أمر الإنتاج");
-
-        form.reset();
-
-    } catch (err) {
-        console.error(err);
-        alert("حدث خطأ أثناء الحفظ");
-    }
-});
+try {
+   ...
+} catch (error) {
+    console.error(error);
+    alert(error.message);
+}
