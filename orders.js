@@ -19,7 +19,7 @@ async function loadOrders() {
 
        tbody.innerHTML += `
 <tr>
-
+<td>${order.orderNo || "-"}</td>
 <td>${order.customer}</td>
 
 <td>${order.glassType}</td>
