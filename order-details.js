@@ -22,27 +22,48 @@ async function loadOrder() {
 
     const order = snap.data();
 
-    document.getElementById("orderNo").textContent =
-        "رقم المستند: " + id;
+   document.getElementById("orderNo").textContent =
+order.orderNo || id;
 
-    document.getElementById("customer").textContent =
-        order.customer;
+document.getElementById("customer").textContent =
+order.customer || "-";
 
-    document.getElementById("glassType").textContent =
-        order.glassType;
+document.getElementById("project").textContent =
+order.project || "-";
 
-    document.getElementById("width").textContent =
-        order.width + " مم";
+document.getElementById("drawingNo").textContent =
+order.drawingNo || "-";
 
-    document.getElementById("height").textContent =
-        order.height + " مم";
+document.getElementById("partNo").textContent =
+order.partNo || "-";
 
-    document.getElementById("qty").textContent =
-        order.qty;
+document.getElementById("glassType").textContent =
+order.glassType || "-";
 
-    document.getElementById("status").textContent =
-        order.status;
+document.getElementById("thickness").textContent =
+order.thickness || "-";
 
+document.getElementById("width").textContent =
+order.width || "-";
+
+document.getElementById("height").textContent =
+order.height || "-";
+
+document.getElementById("qty").textContent =
+order.qty || "-";
+
+document.getElementById("priority").textContent =
+order.priority || "-";
+
+document.getElementById("status").textContent =
+order.status || "-";
+
+const progress = order.progress || 0;
+
+document.getElementById("progressBar").value = progress;
+
+document.getElementById("progressText").textContent =
+progress + "%";
 }
 
 loadOrder();
