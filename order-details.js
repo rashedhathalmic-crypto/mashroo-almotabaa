@@ -158,17 +158,15 @@ document.getElementById("nextStage").addEventListener("click", async () => {
         stage: order.stage,
         time: now
     });
+document.getElementById("status").textContent = order.status;
 
-    document.getElementById("status").textContent = order.status;
+if (document.getElementById("lastUpdate")) {
+    document.getElementById("lastUpdate").textContent = now;
+}
 
-    if (document.getElementById("lastUpdate")) {
-        document.getElementById("lastUpdate").textContent = now;
-    }
+await loadOrder();
 
-    updateScreen();
-    loadHistory();
-
-    alert("تم تحديث المرحلة إلى: " + order.stage);
+alert("تم تحديث المرحلة إلى: " + order.stage);
 
 });
 
