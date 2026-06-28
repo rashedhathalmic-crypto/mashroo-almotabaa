@@ -238,3 +238,39 @@ progress{
 #nextStage:hover{
     background:#15803d;
 }
+body{
+    background:#f4f6f9;
+    direction:rtl;
+    color:#333;
+    font-family:Tahoma, Arial, sans-serif;
+    font-size:18px;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.card{
+    width:100%;
+}
+
+.card p{
+    line-height:2;
+    font-size:18px;
+}
+
+#timeline p{
+    font-size:18px;
+    padding:14px;
+}
+
+.btn{
+    font-size:16px;
+}
+
+#nextStage{
+    font-size:20px;
+    font-weight:bold;
+}
