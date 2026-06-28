@@ -53,7 +53,13 @@ async function loadOrder() {
 
     document.getElementById("qty").textContent =
         order.qty || "-";
+const url =
+    window.location.origin +
+    "/order-details.html?id=" + id;
 
+document.getElementById("qrCode").src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=" +
+    encodeURIComponent(url);
 }
 
 loadOrder();
