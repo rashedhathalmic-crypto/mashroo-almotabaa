@@ -3,8 +3,7 @@ import { db } from "./firebase.js";
 import {
   collection,
   addDoc
-} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 const form = document.getElementById("orderForm");
 
 form.addEventListener("submit", async (e) => {
