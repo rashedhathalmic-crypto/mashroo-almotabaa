@@ -55,11 +55,7 @@ async function loadOrder() {
         order.qty || "-";
 const url =
     window.location.origin +
-    "/order-details.html?id=" + id;
-
-document.getElementById("qrCode").src =
-    "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=" +
-    encodeURIComponent(url);
+    "/mashroo-almotabaa/order-details.html?id=" + id;
 }
 
 loadOrder();
