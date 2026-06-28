@@ -35,7 +35,10 @@ async function loadOrders() {
 <td>
 
 <button class="btn viewBtn" data-id="${doc.id}">
-👁️ عرض
+<button
+    class="btn viewBtn"
+    onclick="window.location='order-details.html?id=${doc.id}'">
+    👁️ عرض
 </button>
 
 <button class="btn editBtn" data-id="${doc.id}">
