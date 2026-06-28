@@ -2,67 +2,107 @@
 <html lang="ar" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أمر إنتاج جديد</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمر إنتاج جديد</title>
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="content">
+<div class="sidebar">
+
+    <h2>📋 نظام المتابعة</h2>
+
+    <a href="dashboard.html">الرئيسية</a>
+    <a href="new-order.html">أمر إنتاج جديد</a>
+    <a href="orders.html">أوامر الإنتاج</a>
+    <a href="production.html">متابعة الإنتاج</a>
+    <a href="reports.html">التقارير</a>
+
+</div>
+
+<div class="main">
 
 <h1>أمر إنتاج جديد</h1>
 
-<form>
+<form class="form">
 
 <label>رقم أمر الإنتاج</label>
-<input type="text" value="PO-0001" readonly>
+<input type="text" value="2026-0001" readonly>
 
 <label>اسم العميل</label>
-<input type="text">
+<input type="text" placeholder="اسم العميل">
 
 <label>اسم المشروع</label>
+<input type="text" placeholder="اسم المشروع">
+
+<label>رقم الرسمة (Drawing No.)</label>
+<input type="text">
+
+<label>رقم القطعة (Part No.)</label>
 <input type="text">
 
 <label>نوع الزجاج</label>
+
 <select>
+
 <option>BR6</option>
+
 <option>BR7</option>
+
 <option>STANAG 2</option>
+
 <option>STANAG 3</option>
+
 <option>STANAG 4</option>
+
 </select>
 
+<label>السمك (مم)</label>
+
+<input type="number">
+
 <label>الطول (مم)</label>
+
 <input type="number">
 
 <label>العرض (مم)</label>
+
 <input type="number">
 
 <label>الكمية</label>
+
 <input type="number">
 
+<label>تاريخ الاستلام</label>
+
+<input type="date">
+
 <label>تاريخ التسليم</label>
+
 <input type="date">
 
 <label>الأولوية</label>
 
 <select>
+
 <option>عادية</option>
+
 <option>مستعجلة</option>
+
 <option>عاجلة جداً</option>
+
 </select>
 
 <label>ملاحظات</label>
 
 <textarea rows="5"></textarea>
 
-<br><br>
-
-<button type="submit">حفظ أمر الإنتاج</button>
+<button type="submit">
+💾 حفظ أمر الإنتاج
+</button>
 
 </form>
 
