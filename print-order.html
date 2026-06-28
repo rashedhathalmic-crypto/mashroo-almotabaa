@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>طباعة أمر الإنتاج</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    background:white;
+}
+
+.print{
+    width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+td,th{
+    border:1px solid #000;
+    padding:10px;
+}
+
+@media print{
+
+button{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="print">
+
+<h1 style="text-align:center">
+🏭 أمر إنتاج
+</h1>
+
+<h2 id="orderNo"></h2>
+
+<table>
+
+<tr>
+<th>العميل</th>
+<td id="customer"></td>
+</tr>
+
+<tr>
+<th>المشروع</th>
+<td id="project"></td>
+</tr>
+
+<tr>
+<th>رقم الرسمة</th>
+<td id="drawingNo"></td>
+</tr>
+
+<tr>
+<th>رقم القطعة</th>
+<td id="partNo"></td>
+</tr>
+
+<tr>
+<th>نوع الزجاج</th>
+<td id="glassType"></td>
+</tr>
+
+<tr>
+<th>السمك</th>
+<td id="thickness"></td>
+</tr>
+
+<tr>
+<th>العرض</th>
+<td id="width"></td>
+</tr>
+
+<tr>
+<th>الارتفاع</th>
+<td id="height"></td>
+</tr>
+
+<tr>
+<th>الكمية</th>
+<td id="qty"></td>
+</tr>
+
+</table>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>الإنتاج</th>
+
+<th>الجودة</th>
+
+<th>التسليم</th>
+
+</tr>
+
+<tr>
+
+<td style="height:90px"></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+<br>
+
+<button onclick="window.print()" class="btn">
+
+🖨️ طباعة
+
+</button>
+
+</div>
+
+<script type="module" src="print-order.js"></script>
+
+</body>
+
+</html>
