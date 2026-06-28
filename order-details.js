@@ -5,7 +5,6 @@ import {
     getDoc,
     updateDoc,
     arrayUnion
-}
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const params = new URLSearchParams(window.location.search);
@@ -50,80 +49,126 @@ async function loadOrder() {
     document.getElementById("height").textContent = order.height || "-";
     document.getElementById("qty").textContent = order.qty || "-";
     document.getElementById("priority").textContent = order.priority || "-";
-document.getElementById("status").textContent = order.status || "-";
-document.getElementById("lastUpdate").textContent = order.lastUpdate || "-";
+    document.getElementById("status").textContent = order.status || "-";
 
-updateScreen();
+    if (document.getElementById("lastUpdate")) {
+        document.getElementById("lastUpdate").textContent =
+            order.lastUpdate || "-";
+    }
+
+    updateScreen();
+    loadHistory();
 }
 
-function updateScreen(){
+function updateScreen() {
 
     const stage = order.stage || "استلام";
-
     const progress = order.progress || 0;
 
     document.getElementById("progressBar").value = progress;
     document.getElementById("progressText").textContent = progress + "%";
 
-    stages.forEach((name,index)=>{
+    stages.forEach((name, index) => {
 
-        const item=document.getElementById("s"+(index+1));
+        const item = document.getElementById("s" + (index + 1));
 
-        if(index < stages.indexOf(stage)){
-            item.innerHTML="✅ "+name;
-        }
-        else if(name===stage){
-            item.innerHTML="🟢 "+name;
-        }
-        else{
-            item.innerHTML="⚪ "+name;
+        if (!item) return;
+
+        if (index < stages.indexOf(stage)) {
+            item.innerHTML = "✅ " + name;
+        } else if (name === stage) {
+            item.innerHTML = "🟢 " + name;
+        } else {
+            item.innerHTML = "⚪ " + name;
         }
 
     });
 
 }
 
-document.getElementById("nextStage").addEventListener("click",async()=>{
+function loadHistory() {
+
+    const tbody = document.querySelector("#historyTable tbody");
+
+    if (!tbody) return;
+
+    tbody.innerHTML = "";
+
+    const history = order.history || [];
+
+    history.forEach(item => {
+
+        tbody.innerHTML += `
+        <tr>
+            <td>${item.stage}</td>
+            <td>${item.time}</td>
+        </tr>
+        `;
+
+    });
+
+}
+
+document.getElementById("nextStage").addEventListener("click", async () => {
 
     const current = stages.indexOf(order.stage || "استلام");
 
-    if(current===stages.length-1){
+    if (current === stages.length - 1) {
 
         alert("تم إنهاء جميع مراحل الإنتاج");
-
         return;
 
     }
 
-    const next=current+1;
+    const next = current + 1;
 
-    order.stage=stages[next];
+    order.stage = stages[next];
 
-    order.progress=Math.round(((next)/(stages.length-1))*100);
+    order.progress = Math.round((next / (stages.length - 1)) * 100);
 
-    if(next===stages.length-1){
-        order.status="مكتمل";
-    }else{
-        order.status="قيد الإنتاج";
+    if (next === stages.length - 1) {
+        order.status = "مكتمل";
+    } else {
+        order.status = "قيد الإنتاج";
     }
 
-   await updateDoc(doc(db,"orders",id),{
+    const now = new Date().toLocaleString("ar-SA");
 
-    stage:order.stage,
+    await updateDoc(doc(db, "orders", id), {
 
-    progress:order.progress,
+        stage: order.stage,
+        progress: order.progress,
+        status: order.status,
+        lastUpdate: now,
 
-    status:order.status,
+        history: arrayUnion({
+            stage: order.stage,
+            time: now
+        })
 
-    lastUpdate:new Date().toLocaleString("ar-SA")
+    });
 
-});
+    order.lastUpdate = now;
 
-    document.getElementById("status").textContent=order.status;
+    if (!order.history) {
+        order.history = [];
+    }
+
+    order.history.push({
+        stage: order.stage,
+        time: now
+    });
+
+    document.getElementById("status").textContent = order.status;
+
+    if (document.getElementById("lastUpdate")) {
+        document.getElementById("lastUpdate").textContent = now;
+    }
 
     updateScreen();
+    loadHistory();
 
-    alert("تم تحديث المرحلة إلى : "+order.stage);
+    alert("تم تحديث المرحلة إلى: " + order.stage);
 
 });
 
