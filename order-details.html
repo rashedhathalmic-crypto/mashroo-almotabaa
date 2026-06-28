@@ -4,10 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تفاصيل أمر الإنتاج</title>
+<title>متابعة أمر الإنتاج</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -17,21 +16,39 @@
 
 <div class="container">
 
-<h1>📄 تفاصيل أمر الإنتاج</h1>
+<div class="header">
+
+<h1>🏭 متابعة أمر الإنتاج</h1>
+
+<a href="orders.html" class="btn">
+⬅ العودة لأوامر الإنتاج
+</a>
+
+</div>
 
 <div class="card">
 
-<h2 id="orderNo">رقم الأمر</h2>
+<h2 id="orderNo">رقم أمر الإنتاج</h2>
 
 <p><strong>العميل:</strong> <span id="customer"></span></p>
 
+<p><strong>المشروع:</strong> <span id="project"></span></p>
+
+<p><strong>رقم الرسمة:</strong> <span id="drawingNo"></span></p>
+
+<p><strong>رقم القطعة:</strong> <span id="partNo"></span></p>
+
 <p><strong>نوع الزجاج:</strong> <span id="glassType"></span></p>
 
-<p><strong>العرض:</strong> <span id="width"></span></p>
+<p><strong>السمك:</strong> <span id="thickness"></span> مم</p>
 
-<p><strong>الارتفاع:</strong> <span id="height"></span></p>
+<p><strong>العرض:</strong> <span id="width"></span> مم</p>
+
+<p><strong>الارتفاع:</strong> <span id="height"></span> مم</p>
 
 <p><strong>الكمية:</strong> <span id="qty"></span></p>
+
+<p><strong>الأولوية:</strong> <span id="priority"></span></p>
 
 <p><strong>الحالة:</strong> <span id="status"></span></p>
 
@@ -39,29 +56,52 @@
 
 <div class="card">
 
-<h2>🏭 متابعة الإنتاج</h2>
+<h2>📈 نسبة الإنجاز</h2>
+
+<progress
+id="progressBar"
+value="0"
+max="100"
+style="width:100%;height:30px;">
+</progress>
+
+<h2 id="progressText">0%</h2>
+
+</div>
+
+<div class="card">
+
+<h2>🏭 مراحل الإنتاج</h2>
 
 <div id="timeline">
 
-<p>✅ استلام الطلب</p>
+<p id="s1">🟢 استلام</p>
 
-<p>⬜ قص</p>
+<p id="s2">⚪ قص</p>
 
-<p>⬜ تجليخ</p>
+<p id="s3">⚪ تجليخ</p>
 
-<p>⬜ غسيل</p>
+<p id="s4">⚪ غسيل</p>
 
-<p>⬜ Lamination</p>
+<p id="s5">⚪ Lamination</p>
 
-<p>⬜ Autoclave</p>
+<p id="s6">⚪ Autoclave</p>
 
-<p>⬜ QC</p>
+<p id="s7">⚪ QC</p>
 
-<p>⬜ تغليف</p>
+<p id="s8">⚪ تغليف</p>
 
-<p>⬜ تسليم</p>
+<p id="s9">⚪ تسليم</p>
 
 </div>
+
+<br>
+
+<button id="nextStage">
+
+✅ إنهاء المرحلة الحالية
+
+</button>
 
 </div>
 
