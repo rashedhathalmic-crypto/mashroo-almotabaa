@@ -17,73 +17,32 @@ async function loadOrders() {
 
         const order = doc.data();
 
-       tbody.innerHTML += `
-<tr>
+        tbody.innerHTML += `
+        <tr>
 
-<td>${order.orderNo || "-"}</td>
+            <td>${order.orderNo || "-"}</td>
 
-<td>${order.customer}</td>
+            <td>${order.customer}</td>
 
-<td>${order.glassType}</td>
+            <td>${order.glassType}</td>
 
-<td>${order.width}</td>
+            <td>${order.width}</td>
 
-<td>${order.height}</td>
+            <td>${order.height}</td>
 
-<td>${order.qty}</td>
+            <td>${order.qty}</td>
 
-<td>${order.status}</td>
+            <td>${order.status}</td>
 
-<td>
+            <td>
+                <a class="btn" href="order-details.html?id=${doc.id}">
+                    👁️ عرض
+                </a>
+            </td>
 
-<a class="btn"
-href="order-details.html?id=${doc.id}">
-👁️ عرض
-</a>
+        </tr>
+        `;
 
-</td>
-
-</tr>
-`;
-<tr>
-<td>${order.orderNo || "-"}</td>
-<td>${order.customer}</td>
-
-<td>${order.glassType}</td>
-
-<td>${order.width}</td>
-
-<td>${order.height}</td>
-
-<td>${order.qty}</td>
-
-<td>${order.status}</td>
-
-<td>
-
-<button class="btn viewBtn" data-id="${doc.id}">
-<button
-    class="btn viewBtn"
-    onclick="window.location='order-details.html?id=${doc.id}'">
-    👁️ عرض
-</button>
-
-<button class="btn editBtn" data-id="${doc.id}">
-✏️ تعديل
-</button>
-
-<button class="btn productionBtn" data-id="${doc.id}">
-🏭 متابعة
-</button>
-
-<button class="btn deleteBtn" 
-🗑️ حذف
-</button>
-
-</td>
-
-</tr>
-`;
     });
 
 }
