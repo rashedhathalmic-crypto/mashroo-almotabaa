@@ -17,16 +17,43 @@ async function loadOrders() {
 
         const order = doc.data();
 
-        tbody.innerHTML += `
-            <tr>
-                <td>${order.customer}</td>
-                <td>${order.glassType}</td>
-                <td>${order.width}</td>
-                <td>${order.height}</td>
-                <td>${order.qty}</td>
-                <td>${order.status}</td>
-            </tr>
-        `;
+       tbody.innerHTML += `
+<tr>
+
+<td>${order.customer}</td>
+
+<td>${order.glassType}</td>
+
+<td>${order.width}</td>
+
+<td>${order.height}</td>
+
+<td>${order.qty}</td>
+
+<td>${order.status}</td>
+
+<td>
+
+<button class="btn viewBtn" data-id="${doc.id}">
+👁️ عرض
+</button>
+
+<button class="btn editBtn" data-id="${doc.id}">
+✏️ تعديل
+</button>
+
+<button class="btn productionBtn" data-id="${doc.id}">
+🏭 متابعة
+</button>
+
+<button class="btn deleteBtn" data-id="${doc.id}">
+🗑️ حذف
+</button>
+
+</td>
+
+</tr>
+`;
     });
 
 }
