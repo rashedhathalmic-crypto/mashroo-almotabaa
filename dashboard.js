@@ -1,8 +1,8 @@
 import { db } from "./firebase.js";
 
 import {
-  collection,
-  getDocs
+    collection,
+    getDocs
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const newOrders = document.getElementById("newOrders");
@@ -21,19 +21,21 @@ async function loadDashboard() {
     let qcCount = 0;
     let finishedCount = 0;
 
-    latestOrders.innerHTML = "";
+    const orders = [];
 
-    snapshot.forEach((doc) => {
+    snapshot.forEach((docSnap) => {
 
-        const order = doc.data();
+        const order = docSnap.data();
 
-        switch(order.status){
+        orders.push(order);
+
+        switch (order.status) {
 
             case "جديد":
                 newCount++;
                 break;
 
-            case "تحت الإنتاج":
+            case "قيد الإنتاج":
                 productionCount++;
                 break;
 
@@ -41,22 +43,12 @@ async function loadDashboard() {
                 qcCount++;
                 break;
 
+            case "مكتمل":
             case "تم التسليم":
                 finishedCount++;
                 break;
 
         }
-
-        latestOrders.innerHTML += `
-        <tr>
-            <td>${order.customer}</td>
-            <td>${order.glassType}</td>
-            <td>${order.width}</td>
-            <td>${order.height}</td>
-            <td>${order.qty}</td>
-            <td>${order.status}</td>
-        </tr>
-        `;
 
     });
 
@@ -64,6 +56,45 @@ async function loadDashboard() {
     productionOrders.textContent = productionCount;
     qcOrders.textContent = qcCount;
     finishedOrders.textContent = finishedCount;
+
+    latestOrders.innerHTML = "";
+
+    orders
+        .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+        .slice(0, 10)
+        .forEach(order => {
+
+            latestOrders.innerHTML += `
+            <tr>
+
+                <td>${order.customer || "-"}</td>
+
+                <td>${order.glassType || "-"}</td>
+
+                <td>${order.width || "-"}</td>
+
+                <td>${order.height || "-"}</td>
+
+                <td>${order.qty || "-"}</td>
+
+                <td>${order.status || "-"}</td>
+
+            </tr>
+            `;
+
+        });
+
+    if (orders.length === 0) {
+
+        latestOrders.innerHTML = `
+        <tr>
+            <td colspan="6">
+                لا توجد أوامر إنتاج
+            </td>
+        </tr>
+        `;
+
+    }
 
 }
 
