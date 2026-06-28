@@ -1,50 +1,116 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمر إنتاج جديد</title>
 
-<title>أمر إنتاج جديد</title>
-
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>أمر إنتاج جديد</h1>
+<div class="container">
 
-<form id="orderForm" class="form">
+    <div class="header">
+        <h1>➕ أمر إنتاج جديد</h1>
 
-<label>اسم العميل</label>
-<input type="text" id="customer" required>
+        <a href="orders.html" class="btn">
+            📋 أوامر الإنتاج
+        </a>
+    </div>
 
-<label>نوع الزجاج</label>
-<select id="glassType">
-<option>BR6</option>
-<option>BR7</option>
-<option>STANAG 2</option>
-<option>STANAG 3</option>
-<option>STANAG 4</option>
-</select>
+    <form id="orderForm" class="form">
 
-<label>العرض (مم)</label>
-<input type="number" id="width" required>
+        <h2>بيانات العميل</h2>
 
-<label>الارتفاع (مم)</label>
-<input type="number" id="height" required>
+        <label>اسم العميل</label>
+        <input type="text" id="customer" required>
 
-<label>الكمية</label>
-<input type="number" id="qty" required>
+        <label>اسم المشروع</label>
+        <input type="text" id="project" required>
 
-<button type="submit">
-💾 حفظ أمر الإنتاج
-</button>
+        <label>رقم الرسمة (Drawing No.)</label>
+        <input type="text" id="drawingNo">
 
-</form>
+        <label>رقم القطعة (Part No.)</label>
+        <input type="text" id="partNo">
+
+        <hr>
+
+        <h2>بيانات الزجاج</h2>
+
+        <label>نوع الزجاج</label>
+
+        <select id="glassType">
+
+            <option value="BR6">BR6</option>
+
+            <option value="BR7">BR7</option>
+
+            <option value="STANAG 2">STANAG 2</option>
+
+            <option value="STANAG 3">STANAG 3</option>
+
+            <option value="STANAG 4">STANAG 4</option>
+
+        </select>
+
+        <label>السمك (مم)</label>
+
+        <input type="number" id="thickness">
+
+        <label>العرض (مم)</label>
+
+        <input type="number" id="width" required>
+
+        <label>الارتفاع (مم)</label>
+
+        <input type="number" id="height" required>
+
+        <label>الكمية</label>
+
+        <input type="number" id="qty" required>
+
+        <hr>
+
+        <h2>بيانات التنفيذ</h2>
+
+        <label>تاريخ الاستلام</label>
+
+        <input type="date" id="receivedDate">
+
+        <label>تاريخ التسليم</label>
+
+        <input type="date" id="deliveryDate">
+
+        <label>الأولوية</label>
+
+        <select id="priority">
+
+            <option>عادي</option>
+
+            <option>مستعجل</option>
+
+            <option>عاجل جداً</option>
+
+        </select>
+
+        <label>ملاحظات</label>
+
+        <textarea id="notes" rows="5"></textarea>
+
+        <button type="submit">
+
+            💾 حفظ أمر الإنتاج
+
+        </button>
+
+    </form>
+
+</div>
 
 <script type="module" src="script.js"></script>
 
 </body>
-
 </html>
