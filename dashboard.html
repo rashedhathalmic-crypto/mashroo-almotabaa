@@ -4,81 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام المتابعة</title>
+    <title>لوحة التحكم</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="sidebar">
 
-    <aside class="sidebar">
+    <h2>🏭 نظام المتابعة</h2>
 
-        <h2>نظام المتابعة</h2>
+    <a href="dashboard.html">🏠 لوحة التحكم</a>
 
-        <ul>
+    <a href="new-order.html">➕ أمر إنتاج جديد</a>
 
-            <li>🏠 الرئيسية</li>
+    <a href="orders.html">📋 أوامر الإنتاج</a>
 
-            <li><a href="new-order.html">📄 أمر إنتاج جديد</a></li>
+    <a href="production.html">🏭 متابعة الإنتاج</a>
 
-           <li><a href="orders.html">📋 أوامر الإنتاج</a></li>
-
-            <li>🏭 مراحل الإنتاج</li>
-
-            <li>📦 التسليم</li>
-
-            <li>📊 التقارير</li>
-
-            <li>⚙️ الإعدادات</li>
-
-        </ul>
-
-    </aside>
-
-    <main class="content">
-
-        <h1>لوحة التحكم</h1>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>طلبات اليوم</h3>
-                <p>0</p>
-            </div>
-
-            <div class="card">
-                <h3>قيد التنفيذ</h3>
-                <p>0</p>
-            </div>
-
-            <div class="card">
-                <h3>تم الإنجاز</h3>
-                <p>0</p>
-            </div>
-
-            <div class="card">
-                <h3>متأخرة</h3>
-                <p>0</p>
-            </div>
-
-        </div>
-
-    </main>
+    <a href="reports.html">📊 التقارير</a>
 
 </div>
 
-<script src="script.js"></script>
+<div class="main">
+
+<div class="topbar">
+
+<h1>لوحة التحكم</h1>
+
+<p>مرحباً بك في نظام متابعة إنتاج مصنع الزجاج المدرع.</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📄 أوامر جديدة</h3>
+
+<p id="newOrders">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏭 تحت الإنتاج</h3>
+
+<p id="productionOrders">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>🧪 بانتظار الجودة</h3>
+
+<p id="qcOrders">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>✅ تم التسليم</h3>
+
+<p id="finishedOrders">0</p>
+
+</div>
+
+</div>
+
+<h2>آخر أوامر الإنتاج</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>العميل</th>
+
+<th>نوع الزجاج</th>
+
+<th>العرض</th>
+
+<th>الارتفاع</th>
+
+<th>الكمية</th>
+
+<th>الحالة</th>
+
+</tr>
+
+</thead>
+
+<tbody id="latestOrders">
+
+<tr>
+
+<td colspan="6">
+
+لا توجد بيانات حتى الآن
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
 
 </body>
-</html>
-.sidebar a{
-    color:white;
-    text-decoration:none;
-    display:block;
-}
 
-.sidebar a:hover{
-    color:#fff;
-}
+</html>
