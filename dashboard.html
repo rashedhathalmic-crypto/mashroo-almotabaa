@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم</title>
+    <title>نظام المتابعة</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>لوحة التحكم</h1>
+<div class="container">
 
-<p>مرحباً بك في نظام المتابعة.</p>
+    <aside class="sidebar">
 
-<div>
-    <button>أمر إنتاج جديد</button>
-    <button>متابعة الإنتاج</button>
-    <button>التقارير</button>
+        <h2>نظام المتابعة</h2>
+
+        <ul>
+
+            <li>🏠 الرئيسية</li>
+
+            <li>📄 أمر إنتاج جديد</li>
+
+            <li>📋 أوامر الإنتاج</li>
+
+            <li>🏭 مراحل الإنتاج</li>
+
+            <li>📦 التسليم</li>
+
+            <li>📊 التقارير</li>
+
+            <li>⚙️ الإعدادات</li>
+
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <h1>لوحة التحكم</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>طلبات اليوم</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>قيد التنفيذ</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>تم الإنجاز</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>متأخرة</h3>
+                <p>0</p>
+            </div>
+
+        </div>
+
+    </main>
+
 </div>
 
 <script src="script.js"></script>
