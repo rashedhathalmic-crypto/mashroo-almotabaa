@@ -48,9 +48,10 @@ async function loadOrder() {
     document.getElementById("height").textContent = order.height || "-";
     document.getElementById("qty").textContent = order.qty || "-";
     document.getElementById("priority").textContent = order.priority || "-";
-    document.getElementById("status").textContent = order.status || "-";
+document.getElementById("status").textContent = order.status || "-";
+document.getElementById("lastUpdate").textContent = order.lastUpdate || "-";
 
-    updateScreen();
+updateScreen();
 }
 
 function updateScreen(){
