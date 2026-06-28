@@ -2,111 +2,46 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أمر إنتاج جديد</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>أمر إنتاج جديد</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="sidebar">
-
-    <h2>📋 نظام المتابعة</h2>
-
-    <a href="dashboard.html">الرئيسية</a>
-    <a href="new-order.html">أمر إنتاج جديد</a>
-    <a href="orders.html">أوامر الإنتاج</a>
-    <a href="production.html">متابعة الإنتاج</a>
-    <a href="reports.html">التقارير</a>
-
-</div>
-
-<div class="main">
-
 <h1>أمر إنتاج جديد</h1>
 
-<form class="form">
-
-<label>رقم أمر الإنتاج</label>
-<input type="text" value="2026-0001" readonly>
+<form id="orderForm" class="form">
 
 <label>اسم العميل</label>
-<input type="text" placeholder="اسم العميل">
-
-<label>اسم المشروع</label>
-<input type="text" placeholder="اسم المشروع">
-
-<label>رقم الرسمة (Drawing No.)</label>
-<input type="text">
-
-<label>رقم القطعة (Part No.)</label>
-<input type="text">
+<input type="text" id="customer" required>
 
 <label>نوع الزجاج</label>
-
-<select>
-
+<select id="glassType">
 <option>BR6</option>
-
 <option>BR7</option>
-
 <option>STANAG 2</option>
-
 <option>STANAG 3</option>
-
 <option>STANAG 4</option>
-
 </select>
-
-<label>السمك (مم)</label>
-
-<input type="number">
-
-<label>الطول (مم)</label>
-
-<input type="number">
 
 <label>العرض (مم)</label>
+<input type="number" id="width" required>
 
-<input type="number">
+<label>الارتفاع (مم)</label>
+<input type="number" id="height" required>
 
 <label>الكمية</label>
-
-<input type="number">
-
-<label>تاريخ الاستلام</label>
-
-<input type="date">
-
-<label>تاريخ التسليم</label>
-
-<input type="date">
-
-<label>الأولوية</label>
-
-<select>
-
-<option>عادية</option>
-
-<option>مستعجلة</option>
-
-<option>عاجلة جداً</option>
-
-</select>
-
-<label>ملاحظات</label>
-
-<textarea rows="5"></textarea>
+<input type="number" id="qty" required>
 
 <button type="submit">
 💾 حفظ أمر الإنتاج
 </button>
 
 </form>
-
-</div>
 
 <script type="module" src="script.js"></script>
 
